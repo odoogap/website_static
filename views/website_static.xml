@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- 
+        	Website Static Block 
+		-->
+		
+        <!-- Website Static Block Tree View -->
+
+        <record model="ir.ui.view" id="view_website_static_block_tree">
+            <field name="name">website.static.tree</field>
+            <field name="model">website.static</field>
+            <field name="arch" type="xml">
+                <tree string="Website Static Block">
+                    <field name="file_name"/>
+                    <field name="block_name"/>
+                </tree>
+            </field>
+        </record>
+
+		<!-- Website Static Block Search View -->
+
+        <record id="view_website_static_block_filter" model="ir.ui.view">
+            <field name="name">website.static.filter</field>
+            <field name="model">website.static</field>
+            <field name="arch" type="xml">
+                <search string="Search Website Static Block">
+                    <field name="file_name"/>
+                    <field name="block_name"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Website Static Block Form View -->
+        
+        <record model="ir.ui.view" id="view_website_static_block_form">
+            <field name="name">website.static.form</field>
+            <field name="model">website.static</field>
+            <field name="arch" type="xml">
+                <form string="Website Static Block">
+	                <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="file_name"/></h1>
+                        </div>
+                        <group>
+                        	<field name="template_id"/>
+                        	<field name="block_name"/>
+                        </group>
+	                	<notebook>
+	                	    <page string="Template">
+		                        <field name="template_block" />
+	                        </page>
+	                	    <page string="Original">
+		                        <field name="original_block" />
+	                        </page>
+	                    </notebook>
+	                </sheet>
+                </form>
+            </field>
+        </record>
+		
+		<!-- Website Static Block Action Window -->
+        
+        <record id="action_website_static_block" model="ir.actions.act_window">
+            <field name="name">Website Static Block</field>
+            <field name="res_model">website.static</field>
+            <field name="view_mode">tree,form</field>
+	        <field name="help" type="html">
+	            <p class="oe_view_nocontent_create">
+	                Click to add a Website Static Block.
+	            </p><p>
+	                The Website Static Block are for the purpose of ???
+	                allowing you to control the ....
+	            </p>
+	        </field>
+        </record>
+
+        <!-- 
+        	Website Template
+		-->
+        <!-- Website Template Tree View -->
+
+        <record model="ir.ui.view" id="view_website_template_tree">
+            <field name="name">website.template.tree</field>
+            <field name="model">website.static.template</field>
+            <field name="arch" type="xml">
+                <tree string="Website Template">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+		<!-- Website Template Search View -->
+
+        <record id="view_website_static_template_filter" model="ir.ui.view">
+            <field name="name">website.static.template.filter</field>
+            <field name="model">website.static.template</field>
+            <field name="arch" type="xml">
+                <search string="Search Website Template">
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Website Template Form View -->
+        
+        <record model="ir.ui.view" id="view_website_static_template_form">
+            <field name="name">website.static.template.form</field>
+            <field name="model">website.static.template</field>
+            <field name="arch" type="xml">
+                <form string="Website Template">
+	                <sheet>
+						<div class="oe_button_box" name="button_box">
+	                        <button class="oe_stat_button" type="action"
+	                            name="%(action_website_static_block)d"
+	                            icon="fa-usd">
+	                        </button>
+	                    </div>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="Template name ..."/></h1>
+                        </div>
+	                	<group>
+	                	    <group>
+	                	    
+		                        <field name="create_date" string="Date"/>
+		                        <field name="active"/>
+	                        </group>
+	                    </group>
+	                </sheet>
+                </form>
+            </field>
+        </record>
+		
+		<!-- Website Template Action Window -->
+        
+        <record id="action_website_template" model="ir.actions.act_window">
+            <field name="name">Website Template</field>
+            <field name="res_model">website.static.template</field>
+            <field name="view_mode">tree,form</field>
+	        <field name="help" type="html">
+	            <p class="oe_view_nocontent_create">
+	                Click to add a Website Template.
+	            </p><p>
+	                The Website Template are for the purpose of ???
+	                allowing you to control the ....
+	            </p>
+	        </field>
+        </record>
+ 
+
+</odoo>

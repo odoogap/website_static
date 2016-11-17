@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="website_static_config_settings_view_form" model="ir.ui.view">
+        <field name="name">website.static.config.settings.form.inherit</field>
+        <field name="model">website.config.settings</field>
+        <field name="inherit_id" ref="website.view_website_config_settings"/>
+        <field name="arch" type="xml">
+            <group name="social" position="before">
+				<group name="static" string="Static Publishing">
+					<label string="Publish" for="template_name" />
+					<div name="template_name">
+						<div name="template_name" class="oe_inline">
+							<field name="template_name"/>
+						</div>
+						<button string="Publish" type="object" name="execute_publish"
+							class="oe_highlight" />
+						<button type="action" name="%(action_website_template)d" string="Static template list" class="oe_link btn-link"/>
+						<button string="Get Attributes" type="object" name="execute_getattributes" class="oe_highlight" />
+					</div>
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>
